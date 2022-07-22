@@ -20,9 +20,18 @@ def login(uName, pWord):
     driver.find_element_by_id("DERIVED_SSR_FL_SSR_DROPPED").click()
     time.sleep(2)
 
-def scanForCourses():
-    print("oogabooga")
-    ##scan over possible courses and store each class in dictonary by keyword day
+def scanForCourses(): ##currently just scans for course name, time, and date, elements and prints them in blocks
+    x=0 ## counter to check if there exists course information at the x'th position.  
+    while True:
+        try:
+            print(driver.find_element_by_id("DERIVED_SSR_FL_SSR_DAYS1${}".format(x)).text) 
+            print(driver.find_element_by_id("DERIVED_SSR_FL_SSR_SCRTAB_DTLS${}".format(x)).text)
+            print(driver.find_element_by_id("DERIVED_SSR_FL_SSR_DAYSTIMES1${}".format(x)).text +"\n")
+        except:
+            break ## when last available course is found the loop ends.
+        x+=1
+
+        ## instead of printing store, course information in a dictionary with day of the week as each key in dictionary.
 
 
 def main():

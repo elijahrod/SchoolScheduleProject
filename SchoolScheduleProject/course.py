@@ -18,8 +18,3 @@ class course:
 
     ##def changeCourseTime():
 
-
-class schdeule(course):
-
-    def()
-    ## schedule class allows for adding or removal of any courses 
